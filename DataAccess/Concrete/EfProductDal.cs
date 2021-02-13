@@ -1,6 +1,7 @@
 ﻿using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
+using Entities.DTOs;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -48,6 +49,11 @@ namespace DataAccess.Concrete
                 //filtre var mı yok mu kontrolu ternary operatorü ile .
                 return filter == null ? context.Set<Product>().ToList() : context.Set<Product>().Where(filter).ToList();
             }
+        }
+
+        public List<ProductDetailDto> GetProductDetails()
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Product entity)
